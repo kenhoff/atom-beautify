@@ -36,6 +36,11 @@ module.exports = class Remark extends Beautifier
     return new @Promise((resolve, reject) ->
       try
         remark = require 'remark'
+        options.rule = "-"
+        options.ruleRepetition = 80
+        options.ruleSpaces = false
+        options.listItemIndent = "tab"
+        options.fences = true
         cleanMarkdown = remark.process(text, options)
         resolve cleanMarkdown
       catch err
