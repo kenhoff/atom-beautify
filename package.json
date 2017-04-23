@@ -1,7 +1,7 @@
 {
   "name": "atom-beautify",
   "main": "./src/beautify",
-  "version": "0.29.9",
+  "version": "0.29.23",
   "private": true,
   "description": "Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom",
   "repository": {
@@ -94,47 +94,92 @@
     {
       "name": "Arman Yessenamanov",
       "url": "https://github.com/yesenarman"
+    },
+    {
+      "name": "Sebastian DiLorenzo",
+      "url": "https://github.com/Sebastian-D"
+    },
+    {
+      "name": "Émile Bergeron",
+      "url": "https://github.com/emileber"
+    },
+    {
+      "name": "Louis G Vichy",
+      "url": "https://github.com/louisgv"
+    },
+    {
+      "name": "Elias Baryshnikov",
+      "url": "https://github.com/qwemaze"
+    },
+    {
+      "name": "Victor Uriarte",
+      "url": "https://github.com/vmuriart"
+    },
+    {
+      "name": "guyskk",
+      "url": "https://github.com/guyskk"
+    },
+    {
+      "name": "Denys Vitali",
+      "url": "https://github.com/denysvitali"
+    },
+    {
+      "name": "Daniel Brodin",
+      "url": "https://github.com/danielbrodin"
+    },
+    {
+      "name": "Anton Brok-Volchansky",
+      "url": "https://github.com/re6exp"
+    },
+    {
+      "name": "Taylon Silmer",
+      "url": "https://github.com/taylon"
     }
   ],
   "engines": {
     "atom": ">=1.6.0 <2.0.0"
   },
   "dependencies": {
-    "async": "^1.2.1",
+    "align-yaml": "^0.1.8",
+    "async": "^2.0.1",
     "atom-message-panel": "^1.2.4",
     "atom-space-pen-views": "^2.0.5",
-    "bluebird": "^3.3.5",
+    "bluebird": "^3.4.3",
     "coffee-fmt": "^0.12.0",
     "coffee-formatter": "^0.1.2",
-    "coffee-script": "^1.10.0",
+    "coffee-script": "^1.11.0",
     "csscomb": "^3.1.7",
-    "diff": "^2.1.0",
+    "diff": "3.0.0",
     "editorconfig": "^0.13.2",
-    "event-kit": "^2.0.0",
+    "eslint": "^3.13.1",
+    "event-kit": "^2.1.0",
     "expand-home-dir": "0.0.3",
     "extend": "^3.0.0",
     "gherkin": "2.12.2",
     "handlebars": "^4.0.2",
     "js-beautify": "^1.6.3",
-    "jscs": "^3.0.3",
-    "lodash": "^4.8.2",
+    "jscs": "^3.0.7",
+    "lodash": "^4.14.2",
     "loophole": "^1.0.0",
-    "marko-prettyprint": "^1.1.8",
-    "node-dir": "^0.1.15",
+    "marko-prettyprint": "^1.3.5",
+    "nginxbeautify": "^2.0.0",
+    "node-cljfmt": "^0.5.3-1",
+    "node-dir": "^0.1.16",
     "node-uuid": "^1.4.3",
+    "open": "0.0.5",
     "prettydiff": "^1.16.27",
     "pug-beautify": "^0.1.1",
-    "remark": "^4.2.2",
+    "remark": "^6.0.1",
     "season": "^5.3.0",
     "space-pen": "^5.1.1",
     "strip-json-comments": "^2.0.1",
     "temp": "^0.8.3",
-    "tidy-markdown": "^2.0.3",
+    "tidy-markdown": "2.0.3",
     "typescript": "^1.8.10",
-    "typescript-formatter": "^2.1.0",
+    "typescript-formatter": "^2.3.0",
     "underscore-plus": "^1.6.6",
-    "universal-analytics": "^0.3.11",
-    "which": "^1.1.1",
+    "universal-analytics": "^0.4.2",
+    "which": "^1.2.11",
     "winston": "^2.2.0",
     "yaml-front-matter": "^3.2.3"
   },
@@ -237,6 +282,8 @@
     "fortran beautifier",
     "js beautify",
     "jscs fixer",
+    "eslint",
+    "eslint fixer",
     "lua beautifier",
     "ocp-indent",
     "perltidy",
@@ -245,6 +292,7 @@
     "pretty diff",
     "pug beautify",
     "puppet-lint",
+    "r",
     "remark",
     "rubocop",
     "ruby beautify",
@@ -255,16 +303,34 @@
     "typescript formatter",
     "yapf",
     "erl_tidy",
-    "marko beautifier"
+    "marko beautifier",
+    "vue",
+    "vue beautifier",
+    "sassconvert",
+    "formatr",
+    "clojure",
+    "clojure beautifier",
+    "nunjucks",
+    "ux markup",
+    "pybeautifier",
+    "cljfmt",
+    "bash",
+    "beautysh",
+    "glsl",
+    "hh_format",
+    "nginx",
+    "nginx beautify",
+    "golang template",
+    "align-yaml"
   ],
   "devDependencies": {
     "coffeelint": "^1.10.1",
     "handlebars": "^4.0.2"
   },
   "scripts": {
-    "postinstall": "node script/build-options.js",
+    "build-options": "node script/build-options.js",
+    "docs": "npm run build-options && coffee docs/",
     "prepublish": "npm run docs",
-    "docs": "coffee docs/",
     "lint": "coffeelint src/ spec/",
     "code-docs": "codo && open docs/code/index.html"
   }

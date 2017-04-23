@@ -41,7 +41,7 @@ module.exports = class Remark extends Beautifier
         options.ruleSpaces = false
         options.listItemIndent = "tab"
         options.fences = true
-        cleanMarkdown = remark.process(text, options)
+        cleanMarkdown = remark().process(text, options).toString()
         resolve cleanMarkdown
       catch err
         @error("Remark error: #{err}")
